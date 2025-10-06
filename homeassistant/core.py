@@ -37,6 +37,7 @@ from typing import (
     Self,
     TypedDict,
     TypeVar,
+    Optional
     cast,
     final,
     overload,
@@ -414,7 +415,7 @@ class HomeAssistant:
     """Root object of the Home Assistant home automation."""
 
     auth: AuthManager
-    http: HomeAssistantHTTP = None  # type: ignore[assignment]
+    http: Optional[HomeAssistantHTTP] = None  # type: ignore[assignment]
     config_entries: ConfigEntries = None  # type: ignore[assignment]
 
     def __new__(cls, config_dir: str) -> Self:
